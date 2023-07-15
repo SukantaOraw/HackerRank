@@ -38,39 +38,73 @@
 //  000.000
 //  -100
 
-import java.math.BigDecimal;
 import java.util.*;
+import java.math.BigDecimal;
 
-class Solution{
-    public static void main(String []args){
-        //Input
-        Scanner sc= new Scanner(System.in);
-        int n=sc.nextInt();
-        String []s=new String[n+2];
-        for(int i=0;i<n;i++){
-            s[i]=sc.next();
+class Solution {
+    public static void main(String[] args) {
+        // Input
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] s = new String[n];
+        for (int i = 0; i < n; i++) {
+            s[i] = sc.next();
         }
-        sc.close();
 
-        //Write your code here
-
-        for (int i = 0; i < n - 1; i++) {
-            BigDecimal value1 = new BigDecimal(s[i]);
-            for (int j = i + 1; j < n; j++) {
-                BigDecimal value2 = new BigDecimal(s[j]);
-                if (value1.compareTo(value2) == -1) { 
-                    String temp = s[i];
-                    s[i] = s[j];
-                    s[j] = temp;
-                    value1 = new BigDecimal(s[i]); 
-                }
+        // Write your code here
+        class Sorting implements Comparator<String> {
+            
+            public int compare(String elem1, String elem2) {
+                
+                BigDecimal value1 = new BigDecimal(elem1);
+                BigDecimal value2 = new BigDecimal(elem2);
+                return value2.compareTo(value1);
+                
             }
         }
+        
+        Arrays.sort(s, new Sorting());
 
-        //Output
-        for(int i=0;i<n;i++)
-        {
+        // Output
+        for (int i = 0; i < n; i++) {
             System.out.println(s[i]);
         }
     }
 }
+
+// import java.math.BigDecimal;
+// import java.util.*;
+
+// class Solution{
+//     public static void main(String []args){
+//         //Input
+//         Scanner sc= new Scanner(System.in);
+//         int n=sc.nextInt();
+//         String []s=new String[n+2];
+//         for(int i=0;i<n;i++){
+//             s[i]=sc.next();
+//         }
+//         sc.close();
+
+//         //Write your code here
+
+//         for (int i = 0; i < n - 1; i++) {
+//             BigDecimal value1 = new BigDecimal(s[i]);
+//             for (int j = i + 1; j < n; j++) {
+//                 BigDecimal value2 = new BigDecimal(s[j]);
+//                 if (value1.compareTo(value2) == -1) { 
+//                     String temp = s[i];
+//                     s[i] = s[j];
+//                     s[j] = temp;
+//                     value1 = new BigDecimal(s[i]); 
+//                 }
+//             }
+//         }
+
+//         //Output
+//         for(int i=0;i<n;i++)
+//         {
+//             System.out.println(s[i]);
+//         }
+//     }
+// }
