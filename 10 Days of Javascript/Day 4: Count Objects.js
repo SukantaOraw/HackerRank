@@ -12,12 +12,6 @@
 // Return a count of the total number of objects o such that o.x = o.y. Locked stub code in the editor prints the returned value to STDOUT.
 
 // Sample Input 0
-// 1
-// 2
-// 3
-// 4
-// 5
-// 6
 // 5
 // 1 1
 // 2 3
@@ -26,7 +20,6 @@
 // 4 5
 
 // Sample Output 0
-// 1
 // 2
 
 // Explanation 0
