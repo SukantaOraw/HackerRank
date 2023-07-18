@@ -20,9 +20,22 @@
 
 // Note: Do not read any input from stdin/console. Complete the printLinkedList function in the editor below.
 
+
 // Constraints:
 //     1. 1<=n<=1000
 //     2. 1<=list[i]<=1000
+
+// Sample Input
+// 2
+// 16
+// 13
+  
+// Sample Output
+// 16
+// 13
+  
+// Explanation
+// There are two elements in the linked list. They are represented as 16 -> 13 -> NULL. So, the printLinkedList function should print 16 and 13 each on a new line.
 
 static void printLinkedList(SinglyLinkedListNode head) {
 
