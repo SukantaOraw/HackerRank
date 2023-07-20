@@ -61,3 +61,39 @@ public static List<Integer> rotateLeft(int d, List<Integer> arr) {
             end--;
         }
     }
+
+//Shortcut
+
+import java.util.*;
+
+class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int total = scan.nextInt();
+        int turn = scan.nextInt();
+
+        List<Integer> arr = new ArrayList<>();
+        List<Integer> arr1 = new ArrayList<>();
+
+        for (int i = 0; i < total; i++) {
+            int temp = scan.nextInt();
+            if (i < turn) {
+                arr1.add(temp);
+            } else {
+                arr.add(temp);
+            }
+        }
+        
+        List<Integer> joined = new ArrayList<>();
+        joined.addAll(arr);
+        joined.addAll(arr1);
+        
+        for (int j : joined) {
+            System.out.print(j + " ");
+        }
+        
+        scan.close();
+    }
+}
